@@ -4,6 +4,8 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  // GitHub Pages 子路径部署：CI 构建用相对路径，避免资源 404；本地开发保持根路径
+  base: process.env.GITHUB_ACTIONS === 'true' ? './' : '/',
   // React 插件 + Tailwind CSS Vite 插件（v4 无需 PostCSS 配置）
   plugins: [react(), tailwindcss()],
   // 部署到云端时允许反向代理域名访问，否则 Vite 会拒绝请求

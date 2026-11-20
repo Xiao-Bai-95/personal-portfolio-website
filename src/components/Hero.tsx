@@ -27,7 +27,7 @@ export default function Hero() {
 
       {/* 头像使用懒加载，符合 AGENTS.md 的性能优化要求 */}
       <img
-        src="/avatar.png"
+        src={`${import.meta.env.BASE_URL}avatar.png`}
         alt="开发者头像"
         loading="lazy"
         className="h-40 w-40 rounded-full border border-line object-cover shadow-2xl md:h-56 md:w-56"
